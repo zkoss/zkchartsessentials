@@ -10,7 +10,7 @@ import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.Button;
 
 /**
- * An example to demonstrate drilldown manually by listening "onPlotClick"<br/>
+ * An example to demonstrate drill-down manually by listening "onPlotClick"<br/>
  * Listening "onPlotDrillDown" is a possible solution, but it will throw an exception when there are multiple series.
  * @author hawk
  *
@@ -30,9 +30,52 @@ public class DisplayMultipleSeriesComposer extends SelectorComposer<Component> {
         super.doAfterCompose(comp);
         chart.getYAxis().setTitle("Values");
         initModel();
-        chart.setModel(model);
         chart.setAttribute(DRILLDOWN_LEVEL, new Integer(0)); 
         updateDrilldownStatus();
+    }
+
+    
+    private enum TRADE{INVOICE_AMOUNT, GROSS_AMOUNT, TOTAL_AMOUNT1, TOTAL_AMOUNT2}
+    private String MARKET1 = "California 1";
+    private String MARKET2 = "California 2";
+
+    private void initModel(){
+    	model.setValue(TRADE.TOTAL_AMOUNT1, MARKET1, 32000);
+    	model.setValue(TRADE.TOTAL_AMOUNT1,MARKET2, 51000);
+    	model.setValue(TRADE.TOTAL_AMOUNT2, MARKET1, 32000);
+    	model.setValue(TRADE.TOTAL_AMOUNT2, MARKET2, 51000);
+    	chart.setModel(model);
+    }
+    
+    /**
+     * Switch the chart's model with corresponding data.  
+     */
+    @Listen("onPlotClick = #chart")
+    public void drilldown(ChartsEvent e){
+    	Integer level = (Integer)chart.getAttribute(DRILLDOWN_LEVEL);
+    	if (level == 0){
+	    	model.clear();
+	    	if (MARKET1.equals(e.getCategory())){
+	    		loadDrilldownModel1();
+	    	}else{
+	    		loadDrilldownModel2();
+	    	}
+	    	level++;
+	    	chart.setAttribute(DRILLDOWN_LEVEL, level);
+	    	updateDrilldownStatus();
+    	}
+    }
+    
+    @Listen("onClick = #back")
+    public void reloadMarket(){
+    	Integer level = (Integer)chart.getAttribute(DRILLDOWN_LEVEL);
+    	if (level == 1){
+    		model.clear();
+    		initModel();
+    		level--;
+    		chart.setAttribute(DRILLDOWN_LEVEL, level);
+    		updateDrilldownStatus();
+    	}
     }
     
     private void updateDrilldownStatus(){
@@ -44,50 +87,7 @@ public class DisplayMultipleSeriesComposer extends SelectorComposer<Component> {
     		chart.getPlotOptions().getSeries().setCursor("normal");
     		backButton.setVisible(true);
     	}
-    }
-    
-    enum TRADE{INVOICE_AMOUNT, GROSS_AMOUNT, TOTAL_AMOUNT}
-    
-    String MARKET1 = "California 1";
-    String MARKET2 = "California 2";
-
-    private void initModel(){
-    	model.setValue(TRADE.TOTAL_AMOUNT, MARKET1, 32000);
-    	model.setValue(TRADE.TOTAL_AMOUNT,MARKET2, 51000);
-    	model.setValue("test", MARKET1, 32000);
-    	model.setValue("test", MARKET2, 51000);
-    }
-    
-    /**
-     * Switch the chart's model with corresponding data.  
-     */
-    @Listen("onPlotClick = charts")
-    public void drilldown(ChartsEvent e){
-    	Integer level = (Integer)chart.getAttribute(DRILLDOWN_LEVEL);
-    	level++;
-    	chart.setAttribute(DRILLDOWN_LEVEL, level);
-    	if (level == 1){
-	    	model.clear();
-	    	if (MARKET1.equals(e.getCategory())){
-	    		loadDrilldownModel1();
-	    	}else{
-	    		loadDrilldownModel2();
-	    	}
-	    	updateDrilldownStatus();
-    	}
-    }
-    
-    @Listen("onClick = #back")
-    public void reloadMarket(){
-    	Integer level = (Integer)chart.getAttribute(DRILLDOWN_LEVEL);
-    	level--;
-    	chart.setAttribute(DRILLDOWN_LEVEL, level);
-    	if (level == 0){
-    		model.clear();
-    		initModel();
-    		updateDrilldownStatus();
-    	}
-    }
+    }    
     
     public void loadDrilldownModel1(){
         model.setValue(TRADE.INVOICE_AMOUNT, "Harbor", 1000);
@@ -113,6 +113,7 @@ public class DisplayMultipleSeriesComposer extends SelectorComposer<Component> {
         model.setValue(TRADE.GROSS_AMOUNT, "Redding", 6000);
     }
  
+    
     /* Doesn't work when there are multiple series
     private void enableDrilldown(){
     	for (int i = 0 ; i< chart.getSeriesSize() ; i++){
