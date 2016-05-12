@@ -1,0 +1,5 @@
+<zk>
+    <div apply="org.zkoss.zkcharts.essentials.ExportComposer">
+        <charts id="mychart" type="pie"/>
+    </div>
+</zk>
