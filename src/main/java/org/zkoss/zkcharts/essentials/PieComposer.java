@@ -11,7 +11,7 @@ import org.zkoss.zk.ui.select.annotation.Wire;
  * @author hawk
  *
  */
-public class PluginComposer extends SelectorComposer<Component> {
+public class PieComposer extends SelectorComposer<Component> {
 
 	@Wire
     private Charts mychart;

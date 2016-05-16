@@ -1,0 +1,10 @@
+<zk>
+<script type="text/javascript" src="http://gabelerner.github.io/canvg/rgbcolor.js"></script> 
+<script type="text/javascript" src="http://gabelerner.github.io/canvg/StackBlur.js"></script>
+<script type="text/javascript" src="http://gabelerner.github.io/canvg/canvg.js"></script> 
+<script defer="true" src="highcharts-export-clientside.js"></script>
+    <div apply="org.zkoss.zkcharts.essentials.PieComposer" >
+        <charts id="mychart" type="pie"/>
+    </div>
+
+</zk>

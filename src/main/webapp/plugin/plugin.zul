@@ -1,7 +1,7 @@
 <zk>
 Get more plugins at http://www.highcharts.com/plugin-registry/plugins
 	<script defer="true" src="export-csv.js"/>    
-    <div apply="org.zkoss.zkcharts.essentials.PluginComposer">
+    <div apply="org.zkoss.zkcharts.essentials.PieComposer">
         <charts id="mychart" type="pie"/>
     </div>
 </zk>
