@@ -1,0 +1,26 @@
+<zk>
+	<window sizable="true" border="normal" height="300px"
+		onAfterSize="System.out.println(event)">
+		<charts id="chart" type="bar"
+			title="Historic World Population by Region" hflex="1" vflex="1"
+			subtitle="Source: Wikipedia.org" />
+		<zscript><![CDATA[
+	import org.zkoss.chart.model.*;
+	CategoryModel model = new DefaultCategoryModel();
+	model.setValue("1900", "Q1", new Integer(20));
+	model.setValue("1900", "Q2", new Integer(55));
+	chart.setModel(model);
+	public void add() {
+		model.setValue("1900", "Q3", new Integer(80));
+		model.setValue("1900", "Q4", new Integer(120));
+	}
+	public void refresh() {
+		model = new DefaultCategoryModel();
+		model.setValue("1900", "Q1", new Integer(20));
+		model.setValue("1900", "Q2", new Integer(55));
+		chart.setModel(model);
+	}
+]]>
+</zscript>
+	</window>
+</zk>
