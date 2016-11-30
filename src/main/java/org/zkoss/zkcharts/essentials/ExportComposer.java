@@ -2,7 +2,6 @@ package org.zkoss.zkcharts.essentials;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import org.zkoss.chart.Charts;
 import org.zkoss.chart.Exporting;
@@ -13,7 +12,6 @@ import org.zkoss.chart.model.SingleValueCategoryModel;
 import org.zkoss.chart.util.AnyVal;
 import org.zkoss.json.JavaScriptValue;
 import org.zkoss.zk.ui.Component;
-import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
 import org.zkoss.zk.ui.select.annotation.Wire;
