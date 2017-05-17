@@ -1,0 +1,3 @@
+<window apply="org.zkoss.zkcharts.essentials.ShiftComposer">
+    <charts id="chart" type="bubble" />
+</window>
