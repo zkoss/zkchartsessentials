@@ -1,0 +1,16 @@
+<zk>
+	<div apply="org.zkoss.zkcharts.essentials.EventComposer" vflex="1">
+		<charts id="chart" type="column"
+			title="Browser market shares. November, 2013"
+			subtitle="Click the columns to view versions. Source: netmarketshare.com." />
+
+		<window id="logWin" title="Event Log" border="normal" vflex="1" 
+			contentStyle="overflow:auto">
+			<forEach items="${msgList}" >
+				<div>
+				<label value="${each}" style="font-size: 16px"/>
+				</div>
+			</forEach>
+		</window>
+	</div>
+</zk>
