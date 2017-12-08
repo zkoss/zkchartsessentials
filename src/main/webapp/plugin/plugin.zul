@@ -1,5 +1,9 @@
-<zk>
-Get more plugins at http://www.highcharts.com/plugin-registry/plugins
+<zk xmlns:n="native">
+    <n:h3>
+a plugin to provide "download csv", "download xls" in the export button.
+    </n:h3>
+    Get more plugins at <n:a href="http://www.highcharts.com/plugin-registry/plugins">http://www.highcharts.com/plugin-registry/plugins</n:a>
+
 	<script defer="true" src="export-csv.js"/>    
     <div apply="org.zkoss.zkcharts.essentials.PieComposer">
         <charts id="mychart" type="pie"/>

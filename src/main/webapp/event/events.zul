@@ -6,11 +6,11 @@
 
 		<window id="logWin" title="Event Log" border="normal" vflex="1" 
 			contentStyle="overflow:auto">
+			<vlayout>
 			<forEach items="${msgList}" >
-				<div>
 				<label value="${each}" style="font-size: 16px"/>
-				</div>
 			</forEach>
+			</vlayout>
 		</window>
 	</div>
 </zk>
