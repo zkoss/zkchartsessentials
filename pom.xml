@@ -55,7 +55,7 @@
 		<dependency>
 		    <groupId>org.zkoss.chart</groupId>
 		    <artifactId>zkcharts</artifactId>
-		    <version>3.0.0-Eval</version>
+		    <version>3.0.1-Eval</version>
 		</dependency>
 	</dependencies>
 	<build>
