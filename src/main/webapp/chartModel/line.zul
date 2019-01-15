@@ -1,0 +1,4 @@
+<zk>
+    <charts id="chart" type="line" width="480" height="300" title="Line Chart Demo"
+            apply="org.zkoss.zkcharts.essentials.model.LineChartComposer"/>
+</zk>
