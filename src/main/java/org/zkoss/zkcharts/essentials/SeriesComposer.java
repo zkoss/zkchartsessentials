@@ -1,9 +1,10 @@
 package org.zkoss.zkcharts.essentials;
 
 import org.zkoss.chart.*;
+import org.zkoss.chart.model.ChartsModel;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
-import org.zkoss.zk.ui.select.annotation.Wire;
+import org.zkoss.zk.ui.select.annotation.*;
 
 
 public class SeriesComposer extends SelectorComposer<Component> {
@@ -27,5 +28,13 @@ public class SeriesComposer extends SelectorComposer<Component> {
 		series1.setData(new Point("apples", 2),  new Point("pears", 1),new Point("oragnes", 3), new Point("bannas", 5), new Point("grapes", 9));
 		series1.setType("column");
 		series1.setName("Peter");
+	}
+
+	@Listen("onClick = #clear")
+	public void clear(){
+		int seriesSize = chart.getSeriesSize();
+		for (int i = 0; i < seriesSize; i++){
+			chart.getSeries().remove();
+		}
 	}
 }
