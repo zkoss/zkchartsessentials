@@ -8,6 +8,7 @@ import org.zkoss.zk.ui.select.annotation.*;
 import org.zkoss.zul.Button;
 
 /**
+ * Demonstrate how to setup a datetime x-axis.
  * https://api.highcharts.com/highcharts/xAxis.dateTimeLabelFormats
  * @author hawk
  *
@@ -22,18 +23,18 @@ public class DatetimeFormatComposer extends SelectorComposer<Component> {
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
         init();
-        // change the default format
+        // can change the default format
         DateTimeLabelFormats oldFormat = chart.getXAxis().getDateTimeLabelFormats();
         oldFormat.setDay("%b-%e");
 
 
         // https://api.highcharts.com/highcharts/tooltip.formatter
-        chart.getTooltip().setPointFormat(" {point.x}");
+        chart.getTooltip().setPointFormat("{point.x}");
         chart.getTooltip().setHeaderFormat("in {series.name}");
     }
 
     private void init() {
-        chart.getXAxis().setType("datetime");
+        chart.getXAxis().setType("datetime"); //required
         chart.getYAxis().setTitle("");
 
         Tooltip tooltip = chart.getTooltip();
