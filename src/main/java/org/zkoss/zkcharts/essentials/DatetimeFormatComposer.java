@@ -25,6 +25,11 @@ public class DatetimeFormatComposer extends SelectorComposer<Component> {
         // change the default format
         DateTimeLabelFormats oldFormat = chart.getXAxis().getDateTimeLabelFormats();
         oldFormat.setDay("%b-%e");
+
+
+        // https://api.highcharts.com/highcharts/tooltip.formatter
+        chart.getTooltip().setPointFormat(" {point.x}");
+        chart.getTooltip().setHeaderFormat("in {series.name}");
     }
 
     private void init() {
