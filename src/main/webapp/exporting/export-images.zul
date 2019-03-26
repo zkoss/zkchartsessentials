@@ -1,0 +1,6 @@
+<zk>
+There are some differences between a Chart on Screen and Exported One
+<div apply="org.zkoss.zkcharts.essentials.exporting.ExportOptionComposer" >
+    <charts id="chart" type="line" title="Export Option" height="300"/>
+</div>
+</zk>

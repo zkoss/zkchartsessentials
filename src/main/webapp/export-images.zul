@@ -1,6 +1,0 @@
-<zk>
-
-<div apply="org.zkoss.zkcharts.essentials.ExportOptionComposer" >
-    <charts id="chart" type="line" title="Export Option" height="300"/>
-</div>
-</zk>
