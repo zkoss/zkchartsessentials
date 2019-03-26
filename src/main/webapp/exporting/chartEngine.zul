@@ -1,0 +1,5 @@
+<zk>
+    <div apply="org.zkoss.zkcharts.essentials.exporting.ChartsEngineComposer">
+        generate a chart to a json string
+    </div>
+</zk>
