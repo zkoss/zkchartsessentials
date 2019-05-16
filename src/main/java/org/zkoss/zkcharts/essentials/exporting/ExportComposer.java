@@ -51,6 +51,7 @@ public class ExportComposer extends SelectorComposer<Component> {
         //optional rebuild the default menu items, otherwise they are replaced
         menuItems.add(defaultMenuItem("printChart", "this.print();"));
         menuItems.add(separator());
+        // this.exportChart() is online exporting via export.highcharts.com
         menuItems.add(defaultMenuItem("downloadPNG", "this.exportChart();"));
         menuItems.add(defaultMenuItem("downloadJPEG", "this.exportChart({type: \"image/jpeg\"});"));
         menuItems.add(defaultMenuItem("downloadPDF", "this.exportChart({type: \"application/pdf\"});"));

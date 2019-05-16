@@ -1,0 +1,15 @@
+<zk>
+    PDF exporting doesn't support Chinese character. The workaround: change to export PDF via export.highcharts.com instead of local javascript exporting
+    <charts type="pie" title="中文"/>
+    <script defer="true"><![CDATA[
+    // ref: https://github.com/highcharts/highcharts/issues/6417
+    Highcharts.wrap(Highcharts.Chart.prototype, 'exportChartLocal', function (proceed, options) {
+            if (options && options.type === 'application/pdf') {
+         this.exportChart(options);
+        } else {
+            proceed.call(this, options);
+        }
+    });
+    ]]>
+    </script>
+</zk>
