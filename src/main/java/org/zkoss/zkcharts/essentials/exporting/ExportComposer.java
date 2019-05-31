@@ -58,7 +58,7 @@ public class ExportComposer extends SelectorComposer<Component> {
         menuItems.add(defaultMenuItem("downloadSVG", "this.exportChart({type: \"image/svg+xml\"});"));
         menuItems.add(separator());
         //add custom menu items (possible at any position in the list)
-        menuItems.add(customMenuItem("My Custom Item (at Client)", "alert('custem menu item clicked, handled in browser')"));
+        menuItems.add(customMenuItem("My Custom Item (at Client)", "alert('custom menu item clicked, handled in browser')"));
         menuItems.add(customMenuItem("My Custom Item (to Server)", fireServerEventScript(ON_MY_CUSTOM_ITEM)));
         buttons.setMenuItems(menuItems);		
 	}

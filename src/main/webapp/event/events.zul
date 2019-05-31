@@ -4,7 +4,7 @@
 			title="Browser market shares. November, 2013"
 			subtitle="Click the columns to view versions. Source: netmarketshare.com." />
 
-		<window id="logWin" title="Event Log" border="normal" vflex="1" 
+		<window id="logWin" title="Event Log - the latest events printed on the top" border="normal" vflex="1"
 			contentStyle="overflow:auto">
 			<vlayout>
 			<forEach items="${msgList}" >
