@@ -1,0 +1,4 @@
+<zk>
+    <charts title="'Infinite' Drilldown on Demand"
+            apply="org.zkoss.zkcharts.essentials.DrilldownOnDemandComposer"/>
+</zk>
