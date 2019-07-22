@@ -2,7 +2,6 @@ package org.zkoss.zkcharts.essentials;
 
 import org.zkoss.chart.*;
 import org.zkoss.zk.ui.util.Composer;
-
 import java.util.HashMap;
 import java.util.stream.IntStream;
 
@@ -27,6 +26,19 @@ public class DrilldownOnDemandComposer implements Composer<Charts> {
             chart.addSeriesAsDrilldown(parent, series);
         });
         chart.addEventListener(ChartsEvents.ON_PLOT_DRILL_UP, e -> { /*NOOP*/ }); //WORKAROUND (https://tracker.zkoss.org/browse/ZKCHARTS-81)
+    }
+
+    /**
+     * https://api.highcharts.com/highcharts/lang.decimalPoint
+     * @param chart
+     */
+    private void setDecimalPointThousandsSep(Charts chart) {
+        Lang lang = new Lang();
+        lang.setDecimalPoint(",");
+        lang.setThousandsSep(".");
+        Options options = new Options();
+        options.setLang(lang);
+        chart.setOptions(options);
     }
 
     private Point[] loadPoints(String prefix, double total, int seriesLength) {
