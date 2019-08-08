@@ -1,5 +1,6 @@
 <zk>
     <div apply="org.zkoss.zkcharts.essentials.exporting.ExportComposer">
+        <button id="export" label="export"/>
         <charts id="mychart" type="pie"/>
     </div>
 </zk>

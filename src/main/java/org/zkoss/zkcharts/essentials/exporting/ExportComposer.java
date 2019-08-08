@@ -92,5 +92,10 @@ public class ExportComposer extends SelectorComposer<Component> {
         menuItem.addExtraAttr("separator", new AnyVal<Boolean>(true));
         return menuItem;
     }
-    
+
+    @Listen("onClick = #export")
+    public void export(){
+	    Clients.evalJavaScript("zk.Widget.$('$" + mychart.getId() +
+                "').engine.exportChart()");
+    }
 }
