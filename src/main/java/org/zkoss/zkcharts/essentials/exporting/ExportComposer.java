@@ -11,6 +11,7 @@ import org.zkoss.chart.model.DefaultSingleValueCategoryModel;
 import org.zkoss.chart.model.SingleValueCategoryModel;
 import org.zkoss.chart.util.AnyVal;
 import org.zkoss.json.JavaScriptValue;
+import org.zkoss.zk.au.out.AuInvoke;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
@@ -95,7 +96,8 @@ public class ExportComposer extends SelectorComposer<Component> {
 
     @Listen("onClick = #export")
     public void export(){
-	    Clients.evalJavaScript("zk.Widget.$('$" + mychart.getId() +
-                "').engine.exportChart()");
+        Clients.response(new AuInvoke(mychart, "export"));
+//	    Clients.evalJavaScript("zk.Widget.$('$" + mychart.getId() +
+//                "').engine.exportChart()");
     }
 }

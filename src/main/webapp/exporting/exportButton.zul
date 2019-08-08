@@ -1,6 +1,6 @@
-<zk>
+<zk xmlns:w="client">
     <div apply="org.zkoss.zkcharts.essentials.exporting.ExportComposer">
         <button id="export" label="export"/>
-        <charts id="mychart" type="pie"/>
+        <charts id="mychart" type="pie" w:export="function() {this.engine.exportChart();}"/>
     </div>
 </zk>
