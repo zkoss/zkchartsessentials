@@ -1,3 +1,0 @@
-<zk>
-    <charts id="chart" title="July temperatures" apply="org.zkoss.zkcharts.essentials.DatetimeFormatComposer"/>
-</zk>

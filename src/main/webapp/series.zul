@@ -1,6 +1,0 @@
-<?import org.zkoss.chart.Version ?>
-<div apply="org.zkoss.zkcharts.essentials.SeriesComposer">
-    <button id="clear" label="clear"/>
-    <charts id="chart"  title="Fruit consumption *"/>
-    Charts ${Version.UID}
-</div>

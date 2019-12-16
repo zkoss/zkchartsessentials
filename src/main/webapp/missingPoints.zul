@@ -1,3 +1,0 @@
-<window apply="org.zkoss.zkcharts.essentials.AreaMissingComposer">
-    <charts id="chart"  title="Fruit consumption *"/>
-</window>
