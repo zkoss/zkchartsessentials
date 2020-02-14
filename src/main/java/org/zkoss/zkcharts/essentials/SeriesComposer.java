@@ -6,6 +6,8 @@ import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.*;
 
+import java.util.*;
+
 
 public class SeriesComposer extends SelectorComposer<Component> {
 
@@ -15,7 +17,18 @@ public class SeriesComposer extends SelectorComposer<Component> {
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
         initData();
-    }
+		addPlotLine();
+	}
+
+	private void addPlotLine() {
+		List list = new LinkedList<>();
+		PlotLine line = new PlotLine();
+		line.setValue(1);
+		line.setWidth(5);
+		line.setColor("#FF0000");
+		list.add(line);
+		chart.getXAxis().setPlotLines(list);
+	}
 
 	private void initData() {
 		chart.getXAxis().setType("category");
