@@ -2,6 +2,7 @@ package org.zkoss.zkcharts.essentials.customizing;
 
 import org.zkoss.chart.Charts;
 import org.zkoss.chart.model.*;
+import org.zkoss.json.JavaScriptValue;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Wire;
@@ -17,10 +18,10 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
         super.doAfterCompose(comp);
 
         model = new DefaultCategoryModel();
-        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Apples</a>", new Integer(5));
-        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Orange</a>", new Integer(7));
-        model.setValue("Peter", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Apples</a>", new Integer(5));
-        model.setValue("Peter", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Orange</a>", new Integer(8));
+        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Apples</a>", new Integer(5000));
+        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Orange</a>", new Integer(7000));
+        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Melon</a>", new Integer(6000));
+        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Lemon</a>", new Integer(8000));
 
         chart.setModel(model);
         chart.getYAxis().setMin(0);
@@ -28,5 +29,18 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
 
         // enable html usage
         chart.getXAxis().getLabels().setUseHTML(true);
+
+        setDatalabelFormatter();
+    }
+
+    /**
+     * register a JavaScript callback function to format the data label.
+     */
+    private void setDatalabelFormatter() {
+        JavaScriptValue js = new JavaScriptValue("function(){if ( this.y > 1000 ) return Highcharts.numberFormat( this.y/1000, 1) + \"K\"; \n" +
+                "else \n" +
+                "          return this.y;}");
+        chart.getSeries().getDataLabels().setEnabled(true);
+        chart.getSeries().getDataLabels().setFormatter(js);
     }
 }
