@@ -15,7 +15,6 @@ public class DrilldownOnDemandComposer implements Composer<Charts> {
         chart.getTooltip().setHeaderFormat("<span style=\"font-size:11px\">{series.name}</span><br>");
         chart.getTooltip().setPointFormat("<span style=\"color:{point.color}\">{point.name}</span>: <b>{point.y:.3f}%</b> of total<br/>");
 
-        chart.getDrilldown().setSeries(); //WORKAROUND (https://tracker.zkoss.org/browse/ZKCHARTS-80)
         chart.getSeries().setName("Root series");
         chart.getSeries().setData(loadPoints("point", 100, 5));
         chart.addEventListener(ChartsEvents.ON_PLOT_DRILL_DOWN, (ChartsEvent e) -> {
