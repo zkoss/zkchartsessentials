@@ -31,9 +31,9 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
         chart.getYAxis().setMin(0);
         chart.getYAxis().setTitle("Total fruit consumption");
 
-        // enable html usage
+        // enable html label
         chart.getXAxis().getLabels().setUseHTML(true);
-        chart.getXAxis().getLabels().setStyle("word-break: break-all; textOverflow: 'none'"); //break words, prevent ellipsis
+        chart.getXAxis().getLabels().setStyle("word-break: break-all;text-overflow: clip;"); //break words, prevent ellipsis
         setDatalabelFormatter();
     }
 
