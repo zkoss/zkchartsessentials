@@ -26,7 +26,10 @@ public class AreaMissingComposer extends SelectorComposer<Window> {
 		series0.setName("John");
 		
 		Series series1 = chart.getSeries(1);
-		series1.setData(new Point("apples", 2),  new Point("pears", 1),new Point("oragnes", null), new Point("Bannas", 5), new Point("Grapes", 9));
+
+		series1.setData(new Point("apples", 2),  new Point("pears", 1)
+				, new Point("oragnes", (Number)null) //missing value on purpose
+				, new Point("Bannas", 5), new Point("Grapes", 9));
 		series1.setType("area");
 		series1.setName("Peter");
 	}
