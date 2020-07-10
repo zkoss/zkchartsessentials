@@ -18,10 +18,14 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
         super.doAfterCompose(comp);
 
         model = new DefaultCategoryModel();
-        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Apples</a>", new Integer(5000));
-        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Orange</a>", new Integer(7000));
-        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Melon</a>", new Integer(6000));
-        model.setValue("John", "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Lemon</a>", new Integer(8000));
+        model.setValue("John"
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Apples: an edible fruit produced by an apple tree (Malus domestica)</a>", new Integer(5000));
+        model.setValue("John"
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Orange</a>", new Integer(7000));
+        model.setValue("John"
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Melon</a>", new Integer(6000));
+        model.setValue("John"
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Lemon</a>", new Integer(8000));
 
         chart.setModel(model);
         chart.getYAxis().setMin(0);
@@ -29,7 +33,7 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
 
         // enable html usage
         chart.getXAxis().getLabels().setUseHTML(true);
-
+        chart.getXAxis().getLabels().setStyle("word-break: break-all; textOverflow: 'none'"); //break words, prevent ellipsis
         setDatalabelFormatter();
     }
 
