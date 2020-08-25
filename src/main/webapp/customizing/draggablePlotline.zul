@@ -1,0 +1,5 @@
+<zk>
+    Display-only draggable plotline
+    <charts id="chart" type="line" title="Season Average Temperature" apply="org.zkoss.zkcharts.essentials.customizing.DraggablePlotlineComposer" height="500"/>
+    <script defer="true" src="/js_customization/draggable-plotline.js"/>
+</zk>
