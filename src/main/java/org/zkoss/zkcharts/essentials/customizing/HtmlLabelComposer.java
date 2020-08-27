@@ -34,6 +34,9 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
         // enable html label
         chart.getXAxis().getLabels().setUseHTML(true);
         chart.getXAxis().getLabels().setStyle("word-break: break-all;text-overflow: clip;"); //break words, prevent ellipsis
+
+        //enable data labels for all series
+        chart.getPlotOptions().getSeries().getDataLabels().setEnabled(true);
         setDatalabelFormatter();
     }
 
@@ -44,7 +47,6 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
         JavaScriptValue js = new JavaScriptValue("function(){if ( this.y > 1000 ) return Highcharts.numberFormat( this.y/1000, 1) + \"K\"; \n" +
                 "else \n" +
                 "          return this.y;}");
-        chart.getSeries().getDataLabels().setEnabled(true);
         chart.getSeries().getDataLabels().setFormatter(js);
     }
 }
