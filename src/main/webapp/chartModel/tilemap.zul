@@ -1,0 +1,11 @@
+<zk>
+    <style>
+        .z-charts {
+            min-width: 360px;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+    </style>
+    <charts id="chart" type="line" width="480" height="300" title="Line Chart Demo"
+            apply="org.zkoss.zkcharts.essentials.model.TilemapComposer"/>
+</zk>
