@@ -63,6 +63,11 @@
 			<version>${zk.version}</version>
 		</dependency>		
 		<dependency>
+			<groupId>org.zkoss.zk</groupId>
+			<artifactId>zhtml</artifactId>
+			<version>${zk.version}</version>
+		</dependency>
+		<dependency>
 		    <groupId>org.zkoss.chart</groupId>
 		    <artifactId>zkcharts</artifactId>
 		    <version>${project.version}</version>

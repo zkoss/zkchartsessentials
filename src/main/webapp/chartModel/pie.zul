@@ -1,4 +1,6 @@
-<zk>
+<zk xmlns:h="native" xmlns:x="xhtml">
+    <x:h1>pie</x:h1>
     <charts id="chart" type="pie" width="480"
             height="300" title="Pie Chart Demo" apply="org.zkoss.zkcharts.essentials.model.PieChartComposer"/>
+    <nav></nav>
 </zk>
