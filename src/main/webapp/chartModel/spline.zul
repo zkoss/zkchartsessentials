@@ -1,0 +1,3 @@
+<charts id="chart" type="spline" title="Wind speed during two days"
+        subtitle="October 6th and 7th 2009 at two locations in Vik i Sogn, Norway"
+        apply="org.zkoss.zkcharts.essentials.model.SplinePlotBandsComposer"/>
