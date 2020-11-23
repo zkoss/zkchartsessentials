@@ -1,0 +1,1 @@
+<charts id="chart" type="column" title="Fruit consumption *" apply="org.zkoss.zkcharts.essentials.AutomaticPointColorComposer"/>
