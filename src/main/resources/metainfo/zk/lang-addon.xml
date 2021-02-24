@@ -1,7 +1,7 @@
 <language-addon>
-	<addon-name>highmap</addon-name>
+	<addon-name>highmaps</addon-name>
 	<depends>chart</depends>
 	<language-name>xul/html</language-name>
 	<javascript package="chart" />
-	<javascript src="~./highmap/map.src.js"  merge="chart" />
+	<javascript package="highmaps" merge="chart"/>
 </language-addon>
