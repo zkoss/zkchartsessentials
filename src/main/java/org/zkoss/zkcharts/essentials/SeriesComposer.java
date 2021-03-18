@@ -8,7 +8,9 @@ import org.zkoss.zk.ui.select.annotation.*;
 
 import java.util.*;
 
-
+/**
+ * Using Series.
+ */
 public class SeriesComposer extends SelectorComposer<Component> {
 
     @Wire

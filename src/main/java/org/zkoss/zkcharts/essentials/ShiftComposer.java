@@ -1,6 +1,7 @@
 package org.zkoss.zkcharts.essentials;
 
 import org.zkoss.chart.*;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.*;
 import org.zkoss.zul.Window;
@@ -9,11 +10,12 @@ import org.zkoss.zul.Window;
  * @author hawk
  *
  */
-public class ShiftComposer extends SelectorComposer<Window> {
+public class ShiftComposer extends SelectorComposer<Component> {
     @Wire
     Charts chart;
-     
-    public void doAfterCompose(Window comp) throws Exception {
+
+    @Override
+    public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
         // initial series data
         initPoints();
