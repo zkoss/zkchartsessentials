@@ -24,7 +24,6 @@ public class DrilldownOnDemandComposer implements Composer<Charts> {
             series.setName("Details of " + parent.getName());
             chart.addSeriesAsDrilldown(parent, series);
         });
-        chart.addEventListener(ChartsEvents.ON_PLOT_DRILL_UP, e -> { /*NOOP*/ }); //WORKAROUND (https://tracker.zkoss.org/browse/ZKCHARTS-81)
     }
 
     /**
