@@ -1,0 +1,4 @@
+<zk>
+    <charts id="chart" title="Combined Chart Type" type="column"
+            apply="org.zkoss.zkcharts.essentials.adv.CombinedChartController"/>
+</zk>
