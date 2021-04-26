@@ -50,7 +50,7 @@ public class EventComposer extends SelectorComposer<Component> {
 	class MyEventListener implements EventListener<ChartsEvent>{
 		@Override
 		public void onEvent(ChartsEvent event) throws Exception {
-			addMessage(event.toString());
+			addMessage(event.getName() + "," + event.getSeries().getName());
 		}
 	}
 	
