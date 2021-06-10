@@ -1,0 +1,3 @@
+<zk>
+    <charts id="chart" zoomType="xy" title="Temperature vs Rainfall" apply="org.zkoss.zkcharts.essentials.config.ColumnHeaderFormatterComposer"/>
+</zk>
