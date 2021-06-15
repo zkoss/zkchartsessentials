@@ -3,4 +3,21 @@
         <button id="export" label="export"/>
         <charts id="mychart" type="pie" w:export="function() {this.engine.exportChart();}"/>
     </div>
+    <script><![CDATA[
+zk.afterLoad('chart', function() {
+   var xCharts = {};
+   zk.override(chart.Charts.prototype, xCharts, {
+      toggleDataTable : function(visible) {
+            var dataTableDiv = this.engine.dataTableDiv;
+            if(dataTableDiv) {
+                jq(dataTableDiv).remove();
+                delete this.engine.dataTableDiv;
+            }
+          if(visible === true || visible === undefined && dataTableDiv === undefined) {
+              this.engine.viewData();
+          }
+      }
+   });//zk.override
+});//zk.afterLoad
+]]></script>
 </zk>
