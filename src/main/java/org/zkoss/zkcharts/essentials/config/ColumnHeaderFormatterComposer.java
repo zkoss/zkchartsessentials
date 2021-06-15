@@ -66,6 +66,7 @@ public class ColumnHeaderFormatterComposer extends SelectorComposer<Component> {
     /**
      * change column header of a data table.
      * https://api.highcharts.com/highcharts/exporting.csv.columnHeaderFormatter
+     * https://jsfiddle.net/gh/get/library/pure/highcharts/highcharts/tree/master/samples/highcharts/export-data/multilevel-table
      */
     private void setupColumnHeader() {
         JSONObject headerFormatter = new JSONObject();
@@ -75,9 +76,11 @@ public class ColumnHeaderFormatterComposer extends SelectorComposer<Component> {
                 "                }\n" +
                 "                // Item is not axis, now we are working with series.\n" +
                 "                // Key is the property on the series we show in this column.\n" +
-                "                if (key == 'low') {colTitle = 'MY LOW'} else if (key =='high') {colTitle = 'MY HIGH' } else {colTitle = key}" +
+                "                if (key == 'low') {colTitle = 'Baja'} \n" +
+                "                else if (key =='high') {colTitle = 'Alto' } \n" +
+                "                else {colTitle = key}\n" +
                 "                return {\n" +
-                "                    topLevelColumnTitle: 'Temperature',\n" +
+                "                    topLevelColumnTitle: item.name,\n" +
                 "                    columnTitle: colTitle\n" +
                 "                };\n" +
                 "            }"));
