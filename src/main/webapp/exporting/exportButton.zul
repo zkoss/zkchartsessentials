@@ -4,6 +4,7 @@
         <charts id="mychart" type="pie" w:export="function() {this.engine.exportChart();}"/>
     </div>
     <script><![CDATA[
+    //toggle the data table's visibility
 zk.afterLoad('chart', function() {
    var xCharts = {};
    zk.override(chart.Charts.prototype, xCharts, {
