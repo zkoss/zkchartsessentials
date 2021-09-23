@@ -46,17 +46,23 @@ public class ExportComposer extends SelectorComposer<Component> {
     
     private void createCustomExportItems() {
         Exporting exporting = mychart.getExporting();
+	// optional: configure a custom export server URL
+        exporting.setUrl("/custom_export_server_url");
+	// optional: disable the export server fallback (https://www.highcharts.com/docs/export-module/client-side-export)
+        exporting.addExtraAttr("fallbackToExportServer", new AnyVal(false));
         ExportingButton buttons = exporting.getButtons();
         List<MenuItem> menuItems = new ArrayList<>();
  
         //optional rebuild the default menu items, otherwise they are replaced
+        menuItems.add(defaultMenuItem("viewFullscreen", "this.fullscreen=new g.FullScreen(this.container);"));
         menuItems.add(defaultMenuItem("printChart", "this.print();"));
         menuItems.add(separator());
-        // this.exportChart() is online exporting via export.highcharts.com
-        menuItems.add(defaultMenuItem("downloadPNG", "this.exportChart();"));
-        menuItems.add(defaultMenuItem("downloadJPEG", "this.exportChart({type: \"image/jpeg\"});"));
-        menuItems.add(defaultMenuItem("downloadPDF", "this.exportChart({type: \"application/pdf\"});"));
-        menuItems.add(defaultMenuItem("downloadSVG", "this.exportChart({type: \"image/svg+xml\"});"));
+        // this.exportChartLocal() trying to export the chart at client side in JS 
+	// and fallback to export.highcharts.com (or the URL configured in exporting.setUrl())
+        menuItems.add(defaultMenuItem("downloadPNG", "this.exportChartLocal();"));
+        menuItems.add(defaultMenuItem("downloadJPEG", "this.exportChartLocal({type: \"image/jpeg\"});"));
+        menuItems.add(defaultMenuItem("downloadPDF", "this.exportChartLocal({type: \"application/pdf\"});"));
+        menuItems.add(defaultMenuItem("downloadSVG", "this.exportChartLocal({type: \"image/svg+xml\"});"));
         menuItems.add(separator());
         //add custom menu items (possible at any position in the list)
         menuItems.add(customMenuItem("My Custom Item (at Client)", "alert('custom menu item clicked, handled in browser')"));
