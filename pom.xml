@@ -3,9 +3,9 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.zkoss</groupId>
 	<artifactId>zkchartsessentials</artifactId>
-	<version>7.2.1.2-Eval</version>
+	<version>7.2.2.0-Eval</version>
 	<properties>
-		<zk.version>9.1.0-Eval</zk.version>
+		<zk.version>9.6.0.1-Eval</zk.version>
 		<maven.build.timestamp.format>yyyy-MM-dd</maven.build.timestamp.format>
 		<packname>-${project.version}-FL-${maven.build.timestamp}</packname>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -50,12 +50,6 @@
 			<groupId>org.zkoss.zk</groupId>
 			<artifactId>zkmax</artifactId>
 			<version>${zk.version}</version>
-			<exclusions>
-				<exclusion>
-					<groupId>net.sf.jasperreports</groupId>
-					<artifactId>jasperreports</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
 		<dependency>
 			<groupId>org.zkoss.zk</groupId>
@@ -75,12 +69,12 @@
 			<plugin>
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
-				<version>9.4.19.v20190610</version>
+				<version>10.0.6</version>
 				<configuration>
-					<webAppConfig>
+					<webApp>
 						<contextPath>/${project.artifactId}</contextPath>
-					</webAppConfig>
-					<scanIntervalSeconds>5</scanIntervalSeconds>
+					</webApp>
+					<scan>5</scan>
 				</configuration>
 			</plugin>
 		</plugins>
