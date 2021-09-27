@@ -54,7 +54,7 @@ public class ExportComposer extends SelectorComposer<Component> {
         List<MenuItem> menuItems = new ArrayList<>();
  
         //optional rebuild the default menu items, otherwise they are replaced
-        menuItems.add(defaultMenuItem("viewFullscreen", "this.fullscreen=new g.FullScreen(this.container);"));
+        menuItems.add(defaultMenuItem("viewFullscreen", "this.fullscreen=new Highcharts.FullScreen(this.container);"));
         menuItems.add(defaultMenuItem("printChart", "this.print();"));
         menuItems.add(separator());
         // this.exportChartLocal() trying to export the chart at client side in JS 
