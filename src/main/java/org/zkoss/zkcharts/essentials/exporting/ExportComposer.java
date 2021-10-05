@@ -77,7 +77,10 @@ public class ExportComposer extends SelectorComposer<Component> {
      
     @Listen(ON_MY_CUSTOM_ITEM + " = #mychart")
     public void handleMyCustomItem() {
-        Clients.showNotification("custem menu item clicked, handled on server");
+        Clients.showNotification("custom menu item clicked, handled on server");
+        //set a custom exported file name, https://api.highcharts.com/highcharts/exporting.filename
+        mychart.getExporting().setFilename("mypiechart");
+        export();
     }
  
     private MenuItem customMenuItem(String text, String onclickJS) {
@@ -102,8 +105,8 @@ public class ExportComposer extends SelectorComposer<Component> {
 
     @Listen("onClick = #export")
     public void export(){
-        Clients.response(new AuInvoke(mychart, "export"));
-//	    Clients.evalJavaScript("zk.Widget.$('$" + mychart.getId() +
-//                "').engine.exportChart()");
+//        Clients.response(new AuInvoke(mychart, "export"));
+	    Clients.evalJavaScript("zk.Widget.$('$" + mychart.getId() +
+                "').engine.exportChartLocal()");
     }
 }
