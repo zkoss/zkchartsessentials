@@ -3,17 +3,19 @@ package org.zkoss.zkcharts.essentials;
 import org.zkoss.chart.Charts;
 import org.zkoss.chart.Point;
 import org.zkoss.chart.Series;
+import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Wire;
 import org.zkoss.zul.Window;
 
 
-public class AreaMissingComposer extends SelectorComposer<Window> {
+public class AreaMissingComposer extends SelectorComposer<Component> {
 
     @Wire
     Charts chart;
-    
-    public void doAfterCompose(Window comp) throws Exception {
+
+    @Override
+    public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
         initData();
     }

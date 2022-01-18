@@ -8,6 +8,10 @@ import java.util.stream.IntStream;
 public class DrilldownOnDemandComposer implements Composer<Charts> {
     private HashMap<String, Point[]> drilldownCache = new HashMap<>();
 
+    /**
+     * https://api.highcharts.com/highcharts/tooltip.headerFormat
+     * https://api.highcharts.com/highcharts/tooltip.pointFormat
+     */
     @Override
     public void doAfterCompose(Charts chart) throws Exception {
         chart.setType(Charts.PIE);
