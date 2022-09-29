@@ -1,7 +1,8 @@
 <language-addon>
+<!--an example to merge highmap source into chart.wpd -->
 	<addon-name>highmaps</addon-name>
 	<depends>chart</depends>
 	<language-name>xul/html</language-name>
-	<javascript package="chart" />
-	<javascript package="highmaps" merge="chart"/>
+<!--	<javascript package="chart" />-->
+<!--	<javascript package="highmaps" merge="chart"/>-->
 </language-addon>
