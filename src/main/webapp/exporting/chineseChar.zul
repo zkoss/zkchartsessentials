@@ -1,15 +1,32 @@
 <zk>
-    PDF exporting doesn't support Chinese character. The workaround: change to export PDF via export.highcharts.com instead of local javascript exporting
-    <charts type="pie" title="中文"/>
+    <charts type="pie" title="中文" id="chart"/>
+    <zscript><![CDATA[
+        import org.zkoss.chart.model.*;
+        import org.zkoss.chart.*;
+
+        PieModel model = new DefaultPieModel();
+        model.setValue("台北", new Double(12.5));
+        model.setValue("台中", new Double(50.2));
+        model.setValue("台南", new Double(20.5));
+        model.setValue("高雄", new Double(15.5));
+
+        chart.setModel(model);
+
+        //load required PDF font
+        PDFFont font = chart.getExporting().getPdfFont();
+        font.setNormal("hyg5gfm.ttf");
+    ]]></zscript>
+    <!-- send to export.highcharts.com to export
     <script defer="true"><![CDATA[
     // ref: https://github.com/highcharts/highcharts/issues/6417
     Highcharts.wrap(Highcharts.Chart.prototype, 'exportChartLocal', function (proceed, options) {
-            if (options && options.type === 'application/pdf') {
-         this.exportChart(options);
+        if (options && options.type === 'application/pdf') {
+            this.exportChart(options);
         } else {
             proceed.call(this, options);
         }
     });
     ]]>
     </script>
+    -->
 </zk>
