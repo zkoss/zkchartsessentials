@@ -21,6 +21,8 @@ public class ShiftComposer extends SelectorComposer<Component> {
         initPoints();
         // hide some unnecessary options
         hideOptions();
+        // allow point select
+        chart.getPlotOptions().getBubble().setAllowPointSelect(true);
     }
       
     @Listen("onPlotClick = #chart")
@@ -30,7 +32,14 @@ public class ShiftComposer extends SelectorComposer<Component> {
         // shift the point by updating its x value.
         point.setX(point.getX().intValue() + random() / 10);
     }
- 
+
+    @Listen("onClick = #chart")
+    public void movePoint(ChartsClickEvent event) {
+        for (Point point: chart.getSelectedPoints()) {
+            point.update(event.getXAxis(), event.getYAxis(), point.getHigh()); //doesn't work for ZKCHARTS-142
+            point.setSelected(false);
+        }
+    }
     private void initPoints() {
         for (int i = 0; i < 10; i ++) {
             chart.getSeries(i).addPoint(random(), random(), i * 5);
