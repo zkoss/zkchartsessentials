@@ -6,7 +6,8 @@
 
 		<window id="logWin" title="Event Log - the latest events printed on the top" border="normal" vflex="1"
 			contentStyle="overflow:auto">
-			<vlayout>
+			<button label="clear"/>
+			<vlayout >
 			<forEach items="${msgList}" >
 				<label value="${each}" style="font-size: 16px"/>
 			</forEach>

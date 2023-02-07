@@ -1,6 +1,7 @@
 package org.zkoss.zkcharts.essentials;
 
 import org.zkoss.chart.*;
+import org.zkoss.chart.util.AnyVal;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.event.EventListener;
 import org.zkoss.zk.ui.select.SelectorComposer;
@@ -45,6 +46,8 @@ public class EventComposer extends SelectorComposer<Component> {
 		chart.addEventListener(ChartsEvents.ON_PLOT_SHOW, listener);
 		chart.addEventListener(ChartsEvents.ON_PLOT_THEME_CHANGE, listener);
 		chart.addEventListener(ChartsEvents.ON_PLOT_UNSELECT, listener);
+
+		chart.getPlotOptions().getColumn().getStates().getSelect().addExtraAttr("color", new AnyVal("red")); //change selected point color
 	}
 	
 	class MyEventListener implements EventListener<ChartsEvent>{
@@ -64,8 +67,13 @@ public class EventComposer extends SelectorComposer<Component> {
 	@Listen("onClick = #chart")
 	public void click(ChartsClickEvent event) {
 		addMessage(event + ": "+ event.getXAxis() +","+ event.getYAxis());
-	}	
-	
+	}
+
+	@Listen("onClick = button[label='clear']")
+	public void clear(){
+		msgList.clear();
+	}
+
 	private void addMessage(String msg){
 		msgList.add(0, msg);
 		while(msgList.size()>100){
