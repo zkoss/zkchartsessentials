@@ -25,7 +25,7 @@ public class FirstChartComposer extends SelectorComposer<Component> {
         model.setValue("New York", "Summer", new Integer(12));
         model.setValue("New York", "Fall", new Integer(10));
         model.setValue("New York", "Winter", new Integer(2));
-
+        
         // Set model to the chart
         chart.setModel(model);
         chart.getTitle().setMargin(0);
