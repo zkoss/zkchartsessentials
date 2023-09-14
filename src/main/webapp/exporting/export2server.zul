@@ -1,0 +1,8 @@
+<zk xmlns:ca="client/attribute">
+    <div apply="org.zkoss.zkcharts.essentials.exporting.Export2ServerComposer">
+        send exported result to the server
+        <button id="export" label="export to server" ca:onclick="export2server()" />
+        <charts id="mychart" type="pie"/>
+        <script src="export2server.js"/>
+    </div>
+</zk>
