@@ -1,0 +1,3 @@
+<zk>
+    <charts id="charts" type="column" model="${model}" apply="org.zkoss.zkcharts.essentials.customizing.ColorComposer"/>
+</zk>
