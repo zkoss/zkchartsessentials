@@ -1,0 +1,10 @@
+<zk>
+    <style>
+        .z-charts{
+            height:50%;
+            width: 80%;
+        }
+    </style>
+    <charts id="chart" type="line" title="Season Average Temperature"
+            apply="org.zkoss.zkcharts.essentials.usecase.LinkedYAxisComposer"/>
+</zk>
