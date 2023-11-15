@@ -1,0 +1,5 @@
+<zk>
+    <charts id="chart" type="column" apply="org.zkoss.zkcharts.essentials.EventComposer"
+    title="zoom with a mouse wheel"/>
+    <script src="mapnavigation.js"/>
+</zk>
