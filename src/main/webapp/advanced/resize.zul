@@ -1,6 +1,6 @@
 <zk>
-	<window sizable="true" border="normal" height="300px"
-		onAfterSize="System.out.println(event)">
+	<window sizable="true" border="normal" height="500px"
+		onAfterSize="System.out.println(event)" title="resize the window and chart resizes accordingly">
 		<charts id="chart" type="bar"
 			title="Historic World Population by Region" hflex="1" vflex="1"
 			subtitle="Source: Wikipedia.org" />

@@ -1,3 +1,4 @@
 <zk>
-    <charts id="chart" apply="org.zkoss.zkcharts.essentials.customizing.HtmlLabelComposer"/>
+    <charts id="chart" apply="org.zkoss.zkcharts.essentials.customizing.HtmlLabelComposer"
+    title="custom x-axis label and data label"/>
 </zk>

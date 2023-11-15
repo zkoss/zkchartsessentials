@@ -1,9 +1,9 @@
 <zk>
-	<window
-		apply="org.zkoss.zkcharts.essentials.OptionsWithouApiComposer">
+	<div apply="org.zkoss.zkcharts.essentials.OptionsWithouApiComposer">
 		<charts id="chart" type="area"
 			title="US and USSR nuclear stockpiles" />
+		Change Fill Opacity:
 		<button id="increase" label="Increase"/>
 		<button id="decrease" label="Decrease"/>		
-	</window>
+	</div>
 </zk>

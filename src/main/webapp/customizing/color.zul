@@ -1,3 +1,4 @@
 <zk>
-    <charts id="charts" type="column" model="${model}" apply="org.zkoss.zkcharts.essentials.customizing.ColorComposer"/>
+    <charts id="charts" type="column" model="${model}" apply="org.zkoss.zkcharts.essentials.customizing.ColorComposer"
+    title="customize a list of default colors"/>
 </zk>

@@ -1,3 +1,3 @@
 <window apply="org.zkoss.zkcharts.essentials.AreaMissingComposer">
-    <charts id="chart"  title="Fruit consumption *"/>
+    <charts id="chart"  title="Missing points - Fruit consumption *"/>
 </window>

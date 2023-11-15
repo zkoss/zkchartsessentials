@@ -2,12 +2,8 @@ package org.zkoss.zkcharts.essentials.exporting;
 
 import org.zkoss.chart.*;
 import org.zkoss.chart.model.*;
-import org.zkoss.chart.util.AnyVal;
-import org.zkoss.json.JavaScriptValue;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
-import org.zkoss.zk.ui.select.annotation.*;
-import org.zkoss.zk.ui.util.Clients;
 
 import java.util.*;
 
@@ -19,7 +15,7 @@ import java.util.*;
 public class ChartsEngineComposer extends SelectorComposer<Component> {
 
 	private SingleValueCategoryModel model = new DefaultSingleValueCategoryModel();
-    private ChartsEngine chart = new ChartsEngine();
+    private ChartsEngine chartsEngine = new ChartsEngine();
 
 	@Override
     public void doAfterCompose(Component comp) throws Exception {
@@ -35,16 +31,11 @@ public class ChartsEngineComposer extends SelectorComposer<Component> {
 
             @Override
             public void run() {
-                try {
-                    Thread.sleep(3000);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
                 //call setters without an Execution
-                chart.setType("pie");
-                chart.setTitle("my pie chart at " + Calendar.getInstance().getTime() );
-                chart.setModel(model);
-                System.out.println(chart.toJSON());
+                chartsEngine.setType("pie");
+                chartsEngine.setTitle("my pie chart at " + Calendar.getInstance().getTime() );
+                chartsEngine.setModel(model);
+                System.out.println(chartsEngine.toJSON());
             }
         };
         new Thread(runnable).start();

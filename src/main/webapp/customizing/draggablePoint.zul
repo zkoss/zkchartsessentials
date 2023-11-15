@@ -1,3 +1,4 @@
 <zk>
+    Tokyo line is draggable
     <charts id="chart" type="line" title="Season Average Temperature" apply="org.zkoss.zkcharts.essentials.customizing.DraggablePointComposer" height="500"/>
 </zk>
