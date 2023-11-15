@@ -12,8 +12,8 @@ public class EventComposer extends SelectorComposer<Component> {
 
 	@Wire
 	private Charts chart;
-	@Wire
-	private Window logWin;
+	@Wire("checkbox")
+	private Checkbox showMouseOverBox;
 	
 	private ListModelList<String> msgList = new ListModelList<String>();
 	
@@ -53,6 +53,10 @@ public class EventComposer extends SelectorComposer<Component> {
 	class MyEventListener implements EventListener<ChartsEvent>{
 		@Override
 		public void onEvent(ChartsEvent event) throws Exception {
+			if (event.getName().contains("Mouse")
+				&& !showMouseOverBox.isChecked()) {
+				return;
+			}
 			addMessage(event.getName() + "," + event.getSeries().getName());
 		}
 	}
