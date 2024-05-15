@@ -1,0 +1,4 @@
+<zk>
+    shrink the chart width smaller than 800px to see the responsive effect
+    <charts id="chart" type="column" apply="org.zkoss.zkcharts.essentials.ResponsiveComposer"/>
+</zk>
