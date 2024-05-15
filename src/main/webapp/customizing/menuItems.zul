@@ -1,0 +1,4 @@
+<zk>
+    <charts id="chart" type="line" title="Custom Menu Items"
+            apply="org.zkoss.zkcharts.essentials.customizing.MenuItemsComposer"/>
+</zk>
