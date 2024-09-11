@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<package name="highmaps" language="xul/html" depends="chart" >
-	<!-- Scripts -->
-	<script src="map.src.js"/>
-</package>
