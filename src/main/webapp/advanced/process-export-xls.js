@@ -6,5 +6,6 @@ zk.afterLoad('chart', function() {
     Highcharts.wrap(Highcharts.Chart.prototype, 'getTable', function(originalFunction, useLocalDecimalPoint) {
         let table = originalFunction();
         console.log(table);//process the table
+        return table;
     });
 });
