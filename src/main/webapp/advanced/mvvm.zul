@@ -1,3 +1,4 @@
 <div viewModel="@id('vm')@init('org.zkoss.zkcharts.essentials.ShiftViewModel')">
+    click a circle to move it
     <charts id="chart" type="bubble" onPlotClick="@command('shiftPoint')"/>
 </div>

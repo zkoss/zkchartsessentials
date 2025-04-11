@@ -1,1 +1,4 @@
+<zk>
+click to move a circle
 <charts id="chart" type="bubble" apply="org.zkoss.zkcharts.essentials.ShiftComposer"/>
+</zk>
