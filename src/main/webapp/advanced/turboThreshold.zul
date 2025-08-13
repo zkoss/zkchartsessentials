@@ -5,6 +5,8 @@
 * Add 1000 non-number points and you see nothing rendered because of turbo threshold is 1000.
 * Open developer tool / console tab to see the error:
     Highcharts error #12: www.highcharts.com/errors/12
+* 11.2.0.0 and before have this behavior
+* see https://api.highcharts.com/highcharts/plotOptions.series.turboThreshold
 </label>
 <button id="addThousand" label="add 1000 non-number points"/>
 <button id="addNumber" label="add 1000 number points"/>
