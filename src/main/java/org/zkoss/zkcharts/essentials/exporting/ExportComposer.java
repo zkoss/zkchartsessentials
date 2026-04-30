@@ -11,7 +11,6 @@ import org.zkoss.chart.model.DefaultSingleValueCategoryModel;
 import org.zkoss.chart.model.SingleValueCategoryModel;
 import org.zkoss.chart.util.AnyVal;
 import org.zkoss.json.JavaScriptValue;
-import org.zkoss.zk.au.out.AuInvoke;
 import org.zkoss.zk.ui.Component;
 import org.zkoss.zk.ui.select.SelectorComposer;
 import org.zkoss.zk.ui.select.annotation.Listen;
@@ -46,23 +45,21 @@ public class ExportComposer extends SelectorComposer<Component> {
     
     private void createCustomExportItems() {
         Exporting exporting = mychart.getExporting();
-	// optional: configure a custom export server URL
-        exporting.setUrl("/custom_export_server_url");
-	// optional: disable the export server fallback (https://www.highcharts.com/docs/export-module/client-side-export)
+		// Use browser-local export. Set local to false if you want to post to an export server.
+		exporting.setLocal(true);
+		// Disable the export server fallback (https://www.highcharts.com/docs/export-module/client-side-export).
         exporting.addExtraAttr("fallbackToExportServer", new AnyVal(false));
         ExportingButton buttons = exporting.getButtons();
         List<MenuItem> menuItems = new ArrayList<>();
  
         //optional rebuild the default menu items, otherwise they are replaced
-        menuItems.add(defaultMenuItem("viewFullscreen", "this.fullscreen=new Highcharts.FullScreen(this.container);"));
-        menuItems.add(defaultMenuItem("printChart", "this.print();"));
+		menuItems.add(defaultMenuItem("viewFullscreen", "this.fullscreen.toggle();"));
+		menuItems.add(defaultMenuItem("printChart", "this.exporting.print();"));
         menuItems.add(separator());
-        // this.exportChartLocal() trying to export the chart at client side in JS 
-	// and fallback to export.highcharts.com (or the URL configured in exporting.setUrl())
-        menuItems.add(defaultMenuItem("downloadPNG", "this.exportChartLocal();"));
-        menuItems.add(defaultMenuItem("downloadJPEG", "this.exportChartLocal({type: \"image/jpeg\"});"));
-        menuItems.add(defaultMenuItem("downloadPDF", "this.exportChartLocal({type: \"application/pdf\"});"));
-        menuItems.add(defaultMenuItem("downloadSVG", "this.exportChartLocal({type: \"image/svg+xml\"});"));
+		menuItems.add(defaultMenuItem("downloadPNG", "this.exporting.exportChart();"));
+		menuItems.add(defaultMenuItem("downloadJPEG", "this.exporting.exportChart({type: \"image/jpeg\"});"));
+		menuItems.add(defaultMenuItem("downloadPDF", "this.exporting.exportChart({type: \"application/pdf\"});"));
+		menuItems.add(defaultMenuItem("downloadSVG", "this.exporting.exportChart({type: \"image/svg+xml\"});"));
         menuItems.add(separator());
         //add custom menu items (possible at any position in the list)
         menuItems.add(customMenuItem("My Custom Item (at Client)", "alert('custom menu item clicked, handled in browser')"));
@@ -105,8 +102,7 @@ public class ExportComposer extends SelectorComposer<Component> {
 
     @Listen("onClick = #export")
     public void export(){
-//        Clients.response(new AuInvoke(mychart, "export"));
 	    Clients.evalJavaScript("zk.Widget.$('$" + mychart.getId() +
-                "').engine.exportChartLocal()");
+				"').engine.exporting.exportChart()");
     }
 }

@@ -17,15 +17,15 @@ public class LinkedYAxisComposer extends SelectorComposer<Component> {
         CategoryModel model = new DefaultCategoryModel();
 
         // Set value to the model
-        model.setValue("Tokyo", "Spring", new Integer(11));
-        model.setValue("Tokyo", "Summer", new Integer(8));
-        model.setValue("Tokyo", "Fall", new Integer(-2));
-        model.setValue("Tokyo", "Winter", new Integer(-10));
+        model.setValue("Tokyo", "Spring", 11);
+        model.setValue("Tokyo", "Summer", 8);
+        model.setValue("Tokyo", "Fall", -2);
+        model.setValue("Tokyo", "Winter", -10);
 
-        model.setValue("New York", "Spring", new Integer(30));
-        model.setValue("New York", "Summer", new Integer(18));
-        model.setValue("New York", "Fall", new Integer(20));
-        model.setValue("New York", "Winter", new Integer(22));
+        model.setValue("New York", "Spring", 30);
+        model.setValue("New York", "Summer", 18);
+        model.setValue("New York", "Fall", 20);
+        model.setValue("New York", "Winter", 22);
 
         // Set model to the chart
         chart.setModel(model);
