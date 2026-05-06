@@ -16,14 +16,14 @@ public class LineChartComposer extends SelectorComposer<Component> {
         super.doAfterCompose(comp);
 
         CategoryModel model = new DefaultCategoryModel();
-        model.setValue("1900", "Q1", new Integer(20));
-        model.setValue("1900", "Q2", new Integer(55));
-        model.setValue("1900", "Q3", new Integer(40));
-        model.setValue("1900", "Q4", new Integer(75));
-        model.setValue("1901", "Q1", new Integer(40));
-        model.setValue("1901", "Q2", new Integer(75));
-        model.setValue("1901", "Q3", new Integer(80));
-        model.setValue("1901", "Q4", new Integer(120));
+        model.setValue("1900", "Q1", 20);
+        model.setValue("1900", "Q2", 55);
+        model.setValue("1900", "Q3", 40);
+        model.setValue("1900", "Q4", 75);
+        model.setValue("1901", "Q1", 40);
+        model.setValue("1901", "Q2", 75);
+        model.setValue("1901", "Q3", 80);
+        model.setValue("1901", "Q4", 120);
 
         chart.setModel(model);
     }

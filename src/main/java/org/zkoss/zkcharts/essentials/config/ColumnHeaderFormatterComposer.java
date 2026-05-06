@@ -38,18 +38,18 @@ public class ColumnHeaderFormatterComposer extends SelectorComposer<Component> {
         series.setName("Rainfall error");
         series.setType("errorbar");
         series.setYAxis(1);
-        series.addPoint(new Integer(48), new Integer(51));
-        series.addPoint(new Integer(68), new Integer(73));
-        series.addPoint(new Integer(92), new Integer(110));
-        series.addPoint(new Integer(128), new Integer(136));
-        series.addPoint(new Integer(140), new Integer(150));
-        series.addPoint(new Integer(171), new Integer(179));
-        series.addPoint(new Integer(135), new Integer(143));
-        series.addPoint(new Integer(142), new Integer(149));
-        series.addPoint(new Integer(204), new Integer(220));
-        series.addPoint(new Integer(189), new Integer(199));
-        series.addPoint(new Integer(95), new Integer(110));
-        series.addPoint(new Integer(52), new Integer(56));
+        series.addPoint(48, 51);
+        series.addPoint(68, 73);
+        series.addPoint(92, 110);
+        series.addPoint(128, 136);
+        series.addPoint(140, 150);
+        series.addPoint(171, 179);
+        series.addPoint(135, 143);
+        series.addPoint(142, 149);
+        series.addPoint(204, 220);
+        series.addPoint(189, 199);
+        series.addPoint(95, 110);
+        series.addPoint(52, 56);
         series.getPlotOptions().getTooltip().setPointFormat(
                 "(error range: {point.low}-{point.high} mm)<br/>");
 

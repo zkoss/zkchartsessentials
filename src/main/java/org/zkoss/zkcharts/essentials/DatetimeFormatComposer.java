@@ -22,9 +22,10 @@ public class DatetimeFormatComposer extends SelectorComposer<Component> {
     @Override
     public void doAfterCompose(Component comp) throws Exception {
         super.doAfterCompose(comp);
-        init();
-        // can change the default format
-        DateTimeLabelFormats oldFormat = chart.getXAxis().getDateTimeLabelFormats();
+		init();
+		chart.getOptions().getTime().setTimezone("Europe/London");
+		// can change the default format
+		DateTimeLabelFormats oldFormat = chart.getXAxis().getDateTimeLabelFormats();
         oldFormat.setDay("%b-%e");
 
 

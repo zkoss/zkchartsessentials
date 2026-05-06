@@ -30,7 +30,7 @@ public class DisplayMultipleSeriesComposer extends SelectorComposer<Component> {
         super.doAfterCompose(comp);
         chart.getYAxis().setTitle("Values");
         initModel();
-        chart.setAttribute(DRILLDOWN_LEVEL, new Integer(0)); 
+        chart.setAttribute(DRILLDOWN_LEVEL, 0);
         updateDrilldownStatus();
     }
 

@@ -19,13 +19,13 @@ public class HtmlLabelComposer extends SelectorComposer<Component> {
 
         model = new DefaultCategoryModel();
         model.setValue("John"
-                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Apples: an edible fruit produced by an apple tree (Malus domestica)</a>", new Integer(5000));
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Apples: an edible fruit produced by an apple tree (Malus domestica)</a>", 5000);
         model.setValue("John"
-                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Orange</a>", new Integer(7000));
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Orange</a>", 7000);
         model.setValue("John"
-                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Melon</a>", new Integer(6000));
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Melon</a>", 6000);
         model.setValue("John"
-                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Lemon</a>", new Integer(8000));
+                , "<a title='great!!' href='http://www.zkoss.org' class='hastip'>Lemon</a>", 8000);
 
         chart.setModel(model);
         chart.getYAxis().setMin(0);
